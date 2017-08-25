@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIWebViewDelegate {
+class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate {
 
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -17,11 +17,7 @@ class ViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        let url = URL(string: "https://www.apple.com/au/")
-        let request = URLRequest(url: url!)
-        
-        webView.loadRequest(request)
+        loadWebview(string: "https://www.apple.com/au/")
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +31,21 @@ class ViewController: UIViewController, UIWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
         activityIndicator.stopAnimating()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        searchBar.resignFirstResponder()
+        loadWebview(string: "https://\(searchBar.text!)")
+    }
+    
+    
+    func loadWebview(string: String) {
+        
+        let url = URL(string: string)
+        let request = URLRequest(url: url!)
+        
+        webView.loadRequest(request)
     }
 
 
