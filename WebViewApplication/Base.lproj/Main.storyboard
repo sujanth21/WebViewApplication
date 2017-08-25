@@ -53,14 +53,23 @@
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nkb-BU-6oD">
                                 <rect key="frame" x="0.0" y="56" width="375" height="567"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="MQl-VW-ogj"/>
+                                </connections>
                             </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FMR-Wv-yLw">
+                                <rect key="frame" x="168.5" y="314.5" width="37" height="37"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="opj-Jw-2aZ" secondAttribute="bottom" id="0Ph-pq-yFi"/>
+                            <constraint firstItem="FMR-Wv-yLw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7BR-dZ-Eby"/>
                             <constraint firstItem="dOB-aJ-kB5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7Yf-Rl-sXd"/>
                             <constraint firstAttribute="trailing" secondItem="opj-Jw-2aZ" secondAttribute="trailing" id="AGq-Dd-tLy"/>
                             <constraint firstAttribute="trailing" secondItem="nkb-BU-6oD" secondAttribute="trailing" id="BXY-JD-kOU"/>
+                            <constraint firstItem="FMR-Wv-yLw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CO7-WD-LN7"/>
                             <constraint firstItem="opj-Jw-2aZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CbJ-en-rLO"/>
                             <constraint firstItem="nkb-BU-6oD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FUo-7V-nnh"/>
                             <constraint firstItem="opj-Jw-2aZ" firstAttribute="top" secondItem="nkb-BU-6oD" secondAttribute="bottom" id="IUx-Wa-AiZ"/>
@@ -70,6 +79,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="FMR-Wv-yLw" id="umv-hB-ymW"/>
                         <outlet property="webView" destination="nkb-BU-6oD" id="ULK-vC-Oa1"/>
                     </connections>
                 </viewController>
